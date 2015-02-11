@@ -1,0 +1,13 @@
+# Author: Lakshmi Ramachandran
+# Date: Feb-11-2015
+# Email: lramach@ncsu.edu
+#
+# SoftCarinality is the implementation of the approach proposed by Jimenez et al in their paper:
+# Jimenez, S., Becerra, C., Gelbukh, A., Bátiz, A. J. D., & Mendizábal, A. (2013, June). SOFTCARDINALITY: hierarchical text overlap for student response analysis. In Proceedings of the 2nd joint conference on lexical and computational semantics (Vol. 2, pp. 280-284).
+
+# The code is in R, takes in a data frame as input.
+# Outputs a data frame with the 42 different soft cardinality features as described by Jimenez et al. in their paper.
+
+# The first few lines of code can be editted to use the name of your data object that contains student answers, reference texts and the prompt/question text.
+# For instance the name of the object I get the data from is "spellcorrected.testUA.beetleCore". 
+# This object is a matrix with columns "stem.spellcheck": contains student responses, "referenceAnswer": the sample response/reference and "questionText": the prompt or the question text. 
