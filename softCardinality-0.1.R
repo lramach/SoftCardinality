@@ -55,13 +55,13 @@ while(i < length(responses)+1){ #iterate over the responses
   #|X| = |Q|', |Y| = |RA|'', |XuY| = |RAuQ|''
   Row3ExtFeats = compExtendFeats(QCard, RACard, RAuQCard)
   #combining all the features
-  featureVec = c(ACard, QCard, RACard, QuACard, RAuACard, RAuACard, Row1ExtFeats, Row2ExtFeats, Row3ExtFeats)
+  featureVec = c(ACard, QCard, RACard, QuACard, RAuACard, RAuQCard, Row1ExtFeats, Row2ExtFeats, Row3ExtFeats)
   #binding features to a dataset
   cardFeatures = rbind(cardFeatures, featureVec)
   i=i+1
 }
 #set colnames
-colnames(cardFeatures) = c("Acard", "Qcard", "RACard", "QuACard", "RAuACard", "RAuACard", paste0("One.",c("XnY", "XbyY", "YbyX", "XnYbyX", "XnYbyY", "XnYbyXuY", "EF7", "EF8", "EF9", "EF10", "EF11", "EF12")), paste0("Two.", c("XnY", "XbyY", "YbyX", "XnYbyX", "XnYbyY", "XnYbyXuY", "EF7", "EF8", "EF9", "EF10", "EF11", "EF12")), paste0("Three.", c("XnY", "XbyY", "YbyX", "XnYbyX", "XnYbyY", "XnYbyXuY", "EF7", "EF8", "EF9", "EF10", "EF11", "EF12")))
+colnames(cardFeatures) = c("Acard", "Qcard", "RACard", "QuACard", "RAuACard", "RAuQCard", paste0("One.",c("XnY", "XbyY", "YbyX", "XnYbyX", "XnYbyY", "XnYbyXuY", "EF7", "EF8", "EF9", "EF10", "EF11", "EF12")), paste0("Two.", c("XnY", "XbyY", "YbyX", "XnYbyX", "XnYbyY", "XnYbyXuY", "EF7", "EF8", "EF9", "EF10", "EF11", "EF12")), paste0("Three.", c("XnY", "XbyY", "YbyX", "XnYbyX", "XnYbyY", "XnYbyXuY", "EF7", "EF8", "EF9", "EF10", "EF11", "EF12")))
 
 #using Equations (2) and (3) from the paper on soft cardinality
 compSimpleCard <- function(tokens, p, weights, qgrams){
